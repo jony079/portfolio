@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#140f24" />
+      <stop offset="100%" stop-color="#090510" />
+    </linearGradient>
+    <linearGradient id="accentGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c2a4ff" />
+      <stop offset="100%" stop-color="#7a34ec" />
+    </linearGradient>
+    <linearGradient id="ionGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb86c" />
+      <stop offset="100%" stop-color="#ff5555" />
+    </linearGradient>
+    <filter id="glow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad1)" stroke="#2b2045" stroke-width="2" />
+  
+  <!-- Subtle grid pattern -->
+  <g stroke="#ffffff" stroke-opacity="0.04" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="500" y1="0" x2="500" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+    <line x1="700" y1="0" x2="700" y2="500" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+  </g>
+
+  <!-- Porous Carbon Honeycomb Mesh -->
+  <g stroke="url(#accentGrad1)" stroke-width="2" fill="none" opacity="0.75">
+    <!-- Row 1 -->
+    <polygon points="260,140 290,123 320,140 320,175 290,192 260,175" />
+    <polygon points="320,140 350,123 380,140 380,175 350,192 320,175" />
+    <polygon points="380,140 410,123 440,140 440,175 410,192 380,175" />
+    <polygon points="440,140 470,123 500,140 500,175 470,192 440,175" />
+    <polygon points="500,140 530,123 560,140 560,175 530,192 500,175" />
+    <!-- Row 2 -->
+    <polygon points="290,192 320,175 350,192 350,227 320,244 290,227" fill="#2b1a4a" fill-opacity="0.3" />
+    <polygon points="350,192 380,175 410,192 410,227 380,244 350,227" />
+    <polygon points="410,192 440,175 470,192 470,227 440,244 410,227" fill="#2b1a4a" fill-opacity="0.4" />
+    <polygon points="470,192 500,175 530,192 530,227 500,244 470,227" />
+    <!-- Row 3 -->
+    <polygon points="260,244 290,227 320,244 320,279 290,296 260,279" />
+    <polygon points="320,244 350,227 380,244 380,279 350,296 320,279" />
+    <polygon points="380,244 410,227 440,244 440,279 410,296 380,279" fill="#2b1a4a" fill-opacity="0.3" />
+    <polygon points="440,244 470,227 500,244 500,279 470,296 440,279" />
+    <polygon points="500,244 530,227 560,244 560,279 530,296 500,279" />
+    <!-- Row 4 -->
+    <polygon points="290,296 320,279 350,296 350,331 320,348 290,331" />
+    <polygon points="350,296 380,279 410,296 410,331 380,348 350,331" />
+    <polygon points="410,296 440,279 470,296 470,331 440,348 410,331" />
+    <polygon points="470,296 500,279 530,296 530,331 500,348 470,331" />
+  </g>
+
+  <!-- Intercalating Na+ ions (Glowing orange spheres) -->
+  <g filter="url(#glow1)">
+    <circle cx="320" cy="210" r="16" fill="url(#ionGrad)" />
+    <circle cx="440" cy="210" r="18" fill="url(#ionGrad)" />
+    <circle cx="380" cy="312" r="15" fill="url(#ionGrad)" />
+    <circle cx="210" cy="180" r="14" fill="url(#ionGrad)" opacity="0.8" />
+    <circle cx="610" cy="260" r="14" fill="url(#ionGrad)" opacity="0.8" />
+  </g>
+  <!-- Ion Labels -->
+  <text x="320" y="215" fill="#ffffff" font-size="12" font-family="sans-serif" font-weight="bold" text-anchor="middle">Na⁺</text>
+  <text x="440" y="215" fill="#ffffff" font-size="13" font-family="sans-serif" font-weight="bold" text-anchor="middle">Na⁺</text>
+  <text x="380" y="317" fill="#ffffff" font-size="12" font-family="sans-serif" font-weight="bold" text-anchor="middle">Na⁺</text>
+  <text x="210" y="185" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">Na⁺</text>
+  <text x="610" y="265" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">Na⁺</text>
+
+  <!-- Diffusion arrows -->
+  <path d="M 230 185 Q 275 195 300 205" stroke="#ffb86c" stroke-width="2" stroke-dasharray="4,4" fill="none" marker-end="url(#arrow)" />
+  <path d="M 500 230 Q 470 220 455 215" stroke="#ffb86c" stroke-width="2" stroke-dasharray="4,4" fill="none" />
+
+  <!-- Badge / Tags -->
+  <rect x="50" y="45" width="230" height="32" rx="6" fill="#251642" stroke="#673ab7" stroke-width="1.5" />
+  <text x="65" y="66" fill="#c2a4ff" font-size="13" font-family="sans-serif" font-weight="600" letter-spacing="1">ENERGY STORAGE & ANODES</text>
+
+  <!-- Title & Subtitle -->
+  <text x="50" y="420" fill="#ffffff" font-size="24" font-family="sans-serif" font-weight="bold">Biomass Nitrogen-Doped Porous Carbon (IP-NPC)</text>
+  <text x="50" y="450" fill="#a493c4" font-size="15" font-family="sans-serif">ActionAid & Praan Finalist | 1235 mAh/g Initial Benchmark | Na⁺ Intercalation</text>
+</svg>

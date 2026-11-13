@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1a24" />
+      <stop offset="100%" stop-color="#040b10" />
+    </linearGradient>
+    <linearGradient id="waterFlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="glow5" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad5)" stroke="#16384c" stroke-width="2" />
+
+  <!-- Filtration Column Schematic -->
+  <g transform="translate(220, 90)">
+    <!-- Column Outer Shell -->
+    <rect x="80" y="20" width="200" height="260" rx="14" fill="#081b28" stroke="#0ea5e9" stroke-width="2" />
+
+    <!-- Inflow Stream (Raw Water with Fe/Mn ions) -->
+    <path d="M 180 0 L 180 20" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" />
+    <circle cx="150" cy="40" r="7" fill="#ef4444" opacity="0.8" />
+    <circle cx="210" cy="45" r="7" fill="#ef4444" opacity="0.8" />
+    <text x="150" y="44" fill="#ffffff" font-size="8" font-family="sans-serif" text-anchor="middle">Fe²⁺</text>
+    <text x="210" y="49" fill="#ffffff" font-size="8" font-family="sans-serif" text-anchor="middle">Mn²⁺</text>
+
+    <!-- Filter Layer 1: Catalytic Media -->
+    <rect x="85" y="65" width="190" height="60" fill="#13354c" stroke="#38bdf8" stroke-width="1" stroke-dasharray="3,3" />
+    <text x="180" y="100" fill="#7dd3fc" font-size="12" font-family="sans-serif" font-weight="bold" text-anchor="middle">Catalytic Oxidation Bed</text>
+
+    <!-- Filter Layer 2: Polyfunctional Media -->
+    <rect x="85" y="135" width="190" height="75" fill="#0d465c" stroke="#06b6d4" stroke-width="1.5" />
+    <text x="180" y="170" fill="#67e8f9" font-size="13" font-family="sans-serif" font-weight="bold" text-anchor="middle">Polyfunctional Filter Media</text>
+    <text x="180" y="190" fill="#a5f3fc" font-size="10" font-family="sans-serif" text-anchor="middle">(Research Gap Identification)</text>
+
+    <!-- Outflow (Purified Potable Water) -->
+    <path d="M 180 280 L 180 300" stroke="#06b6d4" stroke-width="4" stroke-linecap="round" filter="url(#glow5)" />
+    <circle cx="180" cy="250" r="12" fill="#06b6d4" filter="url(#glow5)" />
+    <text x="180" y="254" fill="#ffffff" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">H₂O</text>
+  </g>
+
+  <!-- Research Hypotheses Box (Right) -->
+  <g transform="translate(540, 100)">
+    <rect width="210" height="230" rx="8" fill="#091c26" stroke="#154560" stroke-width="1.5" />
+    <text x="15" y="30" fill="#38bdf8" font-size="12" font-family="sans-serif" font-weight="bold">RESEARCH FRAMEWORK</text>
+    <text x="15" y="48" fill="#7dd3fc" font-size="11" font-family="sans-serif">Rajshahi Municipal Supply</text>
+
+    <circle cx="25" cy="80" r="4" fill="#0ea5e9" />
+    <text x="38" y="84" fill="#cbd5e1" font-size="11" font-family="sans-serif">5-Phase Investigation</text>
+
+    <circle cx="25" cy="115" r="4" fill="#0ea5e9" />
+    <text x="38" y="119" fill="#cbd5e1" font-size="11" font-family="sans-serif">4 Tested Hypotheses</text>
+
+    <circle cx="25" cy="150" r="4" fill="#0ea5e9" />
+    <text x="38" y="154" fill="#cbd5e1" font-size="11" font-family="sans-serif">Iron Discoloration Root</text>
+
+    <circle cx="25" cy="185" r="4" fill="#0ea5e9" />
+    <text x="38" y="189" fill="#cbd5e1" font-size="11" font-family="sans-serif">Novel Adsorption Gap</text>
+  </g>
+
+  <!-- Badge / Tags -->
+  <rect x="50" y="45" width="220" height="32" rx="6" fill="#0c2d3d" stroke="#0284c7" stroke-width="1.5" />
+  <text x="65" y="66" fill="#38bdf8" font-size="13" font-family="sans-serif" font-weight="600" letter-spacing="1">ENVIRONMENTAL & WATER</text>
+
+  <!-- Title & Subtitle -->
+  <text x="50" y="420" fill="#ffffff" font-size="24" font-family="sans-serif" font-weight="bold">Municipal Water Discoloration &amp; Remediation Plan</text>
+  <text x="50" y="450" fill="#7dd3fc" font-size="15" font-family="sans-serif">Groundwater Iron/Manganese Removal • Polyfunctional Filter Media Research Design</text>
+</svg>

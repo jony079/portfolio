@@ -1,0 +1,251 @@
+/* ═══════════════════════════════════════════════
+   WORK / PROJECTS  –  horizontal scroll carousel
+   ═══════════════════════════════════════════════ */
+
+/* ── Section wrapper ──────────────────────────────────────── */
+.work-section {
+  position: relative;
+  background-color: var(--backgroundColor);
+  z-index: 5;
+  padding: 80px 0 60px;
+  clear: both;
+  overflow: visible; /* never clip the scrollable child */
+}
+
+/* ── Container ───────────────────────────────────────────── */
+.work-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  /* section-container already sets width / max-width */
+}
+
+/* ── Header row: title + arrow nav ──────────────────────── */
+.work-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.work-section h2 {
+  font-size: 56px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.work-section h2 > span {
+  color: var(--accentColor);
+}
+
+/* ── Arrow nav ───────────────────────────────────────────── */
+.work-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.work-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(194, 164, 255, 0.4);
+  background: rgba(194, 164, 255, 0.07);
+  color: #c2a4ff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, border-color 0.25s, opacity 0.25s;
+  line-height: 1;
+}
+
+.work-arrow:hover:not(:disabled) {
+  background: rgba(194, 164, 255, 0.18);
+  border-color: rgba(194, 164, 255, 0.8);
+}
+
+.work-arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.work-counter {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+  min-width: 60px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Scrollable track ────────────────────────────────────── */
+.work-track {
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  /* hide native scrollbar – we use dots + arrows instead */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;    /* IE / Edge legacy */
+  padding-bottom: 8px;         /* small breathing room */
+}
+.work-track::-webkit-scrollbar {
+  display: none;               /* Chrome / Safari */
+}
+
+/* ── Flex row of cards ───────────────────────────────────── */
+.work-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 32px;
+  width: max-content;
+  padding-right: 60px; /* so the last card isn't flush against the edge */
+}
+
+/* ── Individual card ─────────────────────────────────────── */
+.work-box {
+  width: 480px;
+  flex-shrink: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: flex-start;
+  scroll-snap-align: start;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.work-box:hover {
+  transform: translateY(-6px);
+  border-color: rgba(194, 164, 255, 0.4);
+}
+
+/* ── Card internals ──────────────────────────────────────── */
+.work-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 14px;
+}
+
+.work-title > div {
+  text-align: right;
+  max-width: 320px;
+}
+
+.work-title h3 {
+  font-size: 44px;
+  line-height: 44px;
+  margin: 0;
+  font-weight: 600;
+  color: var(--accentColor);
+}
+
+.work-title h4 {
+  font-size: 19px;
+  line-height: 23px;
+  font-weight: 500;
+  margin: 0;
+  color: #ffffff;
+}
+
+.work-title p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #a79cb5;
+  margin: 4px 0 0 0;
+}
+
+.work-info h4 {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #c2a4ff;
+  text-transform: uppercase;
+}
+
+.work-info p {
+  font-weight: 300;
+  color: #d1cdd6;
+  margin: 0;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.work-info > p {
+  width: 100%;
+}
+
+/* ── Progress dots ───────────────────────────────────────── */
+.work-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.work-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s, width 0.3s;
+}
+
+.work-dot.active {
+  background: #c2a4ff;
+  width: 24px;
+  border-radius: 4px;
+  transform: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media only screen and (max-width: 1400px) {
+  .work-box {
+    width: 420px;
+    padding: 32px 28px;
+  }
+
+  .work-title h3 { font-size: 38px; }
+  .work-title h4 { font-size: 17px; }
+  .work-info p   { font-size: 13px; }
+  .work-info h4  { font-size: 14px; }
+  .work-section h2 { font-size: 44px; }
+}
+
+@media only screen and (max-width: 900px) {
+  .work-box {
+    width: 300px;
+    padding: 24px 20px;
+  }
+  .work-section h2 { font-size: 32px; }
+  .work-arrow { width: 40px; height: 40px; font-size: 17px; }
+  .work-flex { gap: 20px; }
+}
+
+@media only screen and (max-width: 600px) {
+  .work-box { width: 85vw; }
+  .work-section { padding: 60px 0 40px; }
+}
