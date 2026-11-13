@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b172a" />
+      <stop offset="100%" stop-color="#050a14" />
+    </linearGradient>
+    <linearGradient id="planeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.3" />
+    </linearGradient>
+    <filter id="glow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad2)" stroke="#1e293b" stroke-width="2" />
+
+  <!-- 3D Isometric Crystal Lattice (FCC / BCC) -->
+  <g transform="translate(180, 70)">
+    <!-- Back faces -->
+    <polygon points="120,40 260,40 260,180 120,180" fill="#0f213e" stroke="#1e3a5f" stroke-width="1.5" />
+    
+    <!-- Miller Plane (111) Semi-transparent shaded polygon -->
+    <polygon points="40,240 260,40 180,300" fill="url(#planeGrad)" stroke="#38bdf8" stroke-width="2" />
+
+    <!-- Front & Side Cube Edges -->
+    <!-- Front face -->
+    <polygon points="40,120 180,120 180,260 40,260" fill="none" stroke="#60a5fa" stroke-width="2.5" />
+    <!-- Connecting edges -->
+    <line x1="40" y1="120" x2="120" y2="40" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3,3" />
+    <line x1="180" y1="120" x2="260" y2="40" stroke="#60a5fa" stroke-width="2.5" />
+    <line x1="180" y1="260" x2="260" y2="180" stroke="#60a5fa" stroke-width="2.5" />
+    <line x1="40" y1="260" x2="120" y2="180" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3,3" />
+
+    <!-- Atoms at Lattice Vertices -->
+    <!-- Back vertices -->
+    <circle cx="120" cy="40" r="9" fill="#93c5fd" opacity="0.6" />
+    <circle cx="260" cy="40" r="11" fill="#38bdf8" />
+    <circle cx="120" cy="180" r="9" fill="#93c5fd" opacity="0.6" />
+    <circle cx="260" cy="180" r="11" fill="#38bdf8" />
+    <!-- Front vertices -->
+    <circle cx="40" cy="120" r="12" fill="#60a5fa" />
+    <circle cx="180" cy="120" r="12" fill="#60a5fa" />
+    <circle cx="40" cy="260" r="12" fill="#60a5fa" />
+    <circle cx="180" cy="260" r="12" fill="#60a5fa" />
+    <!-- Face Centered Atoms -->
+    <circle cx="110" cy="190" r="10" fill="#a855f7" filter="url(#glow2)" />
+    <circle cx="150" cy="80" r="10" fill="#a855f7" filter="url(#glow2)" />
+    <circle cx="220" cy="150" r="10" fill="#a855f7" filter="url(#glow2)" />
+
+    <!-- Plane label -->
+    <rect x="150" y="210" width="85" height="26" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1" />
+    <text x="192" y="228" fill="#38bdf8" font-size="12" font-family="sans-serif" font-weight="bold" text-anchor="middle">(1 1 1) Plane</text>
+  </g>
+
+  <!-- XRD Diffraction Spectrum Simulator (Right Side) -->
+  <g transform="translate(480, 110)">
+    <!-- Box frame -->
+    <rect width="270" height="230" rx="8" fill="#071120" stroke="#1e293b" stroke-width="1.5" />
+    <text x="20" y="30" fill="#94a3b8" font-size="12" font-family="sans-serif" font-weight="600">XRD PATTERN SIMULATOR</text>
+    <text x="20" y="48" fill="#64748b" font-size="11" font-family="monospace">Cu-Kα (λ = 1.5406 Å)</text>
+
+    <!-- Spectrum Axes -->
+    <line x1="30" y1="60" x2="30" y2="190" stroke="#334155" stroke-width="1.5" />
+    <line x1="30" y1="190" x2="250" y2="190" stroke="#334155" stroke-width="1.5" />
+
+    <!-- Simulated Diffraction Peaks -->
+    <!-- Peak (111) -->
+    <path d="M 60 190 Q 75 190 77 100 Q 80 70 83 100 Q 85 190 100 190" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8" stroke-width="2" />
+    <text x="80" y="60" fill="#38bdf8" font-size="10" font-family="monospace" text-anchor="middle">(111)</text>
+
+    <!-- Peak (200) -->
+    <path d="M 115 190 Q 128 190 130 130 Q 133 110 136 130 Q 138 190 150 190" fill="#60a5fa" fill-opacity="0.2" stroke="#60a5fa" stroke-width="2" />
+    <text x="133" y="100" fill="#60a5fa" font-size="10" font-family="monospace" text-anchor="middle">(200)</text>
+
+    <!-- Peak (220) -->
+    <path d="M 175 190 Q 188 190 190 120 Q 193 90 196 120 Q 198 190 210 190" fill="#818cf8" fill-opacity="0.2" stroke="#818cf8" stroke-width="2" />
+    <text x="193" y="80" fill="#818cf8" font-size="10" font-family="monospace" text-anchor="middle">(220)</text>
+
+    <text x="140" y="212" fill="#64748b" font-size="10" font-family="monospace" text-anchor="middle">2θ (Degrees)</text>
+  </g>
+
+  <!-- Badge / Tags -->
+  <rect x="50" y="45" width="220" height="32" rx="6" fill="#0f2647" stroke="#0284c7" stroke-width="1.5" />
+  <text x="65" y="66" fill="#38bdf8" font-size="13" font-family="sans-serif" font-weight="600" letter-spacing="1">CRYSTALLOGRAPHY & 3D</text>
+
+  <!-- Title & Subtitle -->
+  <text x="50" y="420" fill="#ffffff" font-size="24" font-family="sans-serif" font-weight="bold">Cubic Crystal Visualizer & XRD Simulator</text>
+  <text x="50" y="450" fill="#93c5fd" font-size="15" font-family="sans-serif">Python • Streamlit • Plotly | SC, BCC, FCC, HCP & Arbitrary (hkl) Miller Planes</text>
+</svg>
